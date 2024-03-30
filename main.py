@@ -14,12 +14,18 @@ def takeCommand():
         except Exception as e:
             return "sorry Boss i don't understand you"
 
-s=("Hello boss")
+s=("Hello boss Tell me Something")
 speaker.Speak(s)
 while True:
     print("Listening.....")
+    print("Tell something to pandu....")
     text = takeCommand()
+    speaker.Speak(text)
     if "open YouTube".lower() in text.lower():
         speaker.Speak("Opening YouTube Sir")
         webbrowser.open("https://www.youtube.com/")
-    speaker.Speak(text)
+    if "go back".lower() in text.lower():
+        print("Good Bye")
+        speaker.Speak("Good Bye Sir")
+        break
+
